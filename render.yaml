@@ -6,9 +6,8 @@ services:
     branch: main
     plan: free
 
-    # Web service needs a port binding (dummy server to keep it alive)
     buildCommand: pip install -r requirements.txt
-    startCommand: python3 -m ubb & python3 -c "from http.server import HTTPServer, BaseHTTPRequestHandler; HTTPServer(('', 8000), type('', (BaseHTTPRequestHandler,), {'do_GET': lambda s: s.send_response(200)} )).serve_forever()"
+    startCommand: python3 -m ubb
 
     envVars:
       - key: API_ID
