@@ -11,10 +11,10 @@ services:
 
     envVars:
       - key: API_ID
-        value: 123456
+        value: 33798531
       - key: API_HASH
-        value: "your_api_hash_here"
+        value: "5daa87783e064820a001056e97891e6e"
       - key: STRING_SESSION
-        value: "your_telethon_session_string_here"
+        value: "AQIDuYMAMuMhiYLeKGUsczQ7Db8IhN36OLR9ihO_ummN9Jc1Iz4HK4PY9WABt2Trc4H7p9DehTghyhsNr9rsBk-NWN2C2PV_PoFhSt_Dir6qcZM8eI074E6CjArNK2AYilaFTEELGHloojaduimv5YTCiWM4lZjhMDsoonOnnBHgFrJ-H_lh5LJhf_QADwb20ManewsYquvFD9AYZFkaX3XmCJrqLMSDcEMDKPNxfyzK0owkTBTn1CSly_X-l_5UJHZjBWNuJ1h8drDIUbdASFrSXH_bdUI4gr6tMUltlC2I8fn_bfylheQIudIprJawJJ4-ABx-B76bevkQSilWfMTX_Rm0PgAAAAHwxqJsAA"
       - key: DUMP_ID
-        value: -1001234567890
+        value: -1003820179176
