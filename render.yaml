@@ -1,28 +1,21 @@
-# render.yaml for ccchk-ub - Telegram UserBot
-# This creates a background worker service on Render.
-
 services:
-  - type: worker
-    name: ccchk-ub-worker
+  - type: web
+    name: ccchk-ub
     runtime: python
     repo: https://github.com/happyidgc-blip/ccchk-ub
     branch: main
     plan: free
 
-    # Specify the command to start the userbot
+    # Web service needs a port binding (dummy server to keep it alive)
     buildCommand: pip install -r requirements.txt
-    startCommand: python3 -m ubb
+    startCommand: python3 -m ubb & python3 -c "from http.server import HTTPServer, BaseHTTPRequestHandler; HTTPServer(('', 8000), type('', (BaseHTTPRequestHandler,), {'do_GET': lambda s: s.send_response(200)} )).serve_forever()"
 
-    # Environment variables required for the userbot to function
     envVars:
       - key: API_ID
-        value: 123456  # <--- REPLACE with your actual API ID from my.telegram.org
-
+        value: 123456
       - key: API_HASH
-        value: "your_api_hash_here"  # <--- REPLACE with your actual API Hash
-
+        value: "your_api_hash_here"
       - key: STRING_SESSION
-        value: "your_telethon_session_string_here"  # <--- REPLACE with the session generated via sessionmaker.py
-
+        value: "your_telethon_session_string_here"
       - key: DUMP_ID
-        value: -1001234567890  # <--- REPLACE with your target channel/chat ID (must be numeric)
+        value: -1001234567890
