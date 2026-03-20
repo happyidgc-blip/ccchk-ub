@@ -7,30 +7,22 @@ services:
     runtime: python
     repo: https://github.com/happyidgc-blip/ccchk-ub
     branch: main
-    plan: free # or starter, pro, etc.
+    plan: free
 
     # Specify the command to start the userbot
-    buildCommand: |
-      pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: python3 -m ubb
 
     # Environment variables required for the userbot to function
     envVars:
       - key: API_ID
-        value: 123456 # <--- REPLACE with your actual API ID from my.telegram.org
-        sync: false
+        value: 123456  # <--- REPLACE with your actual API ID from my.telegram.org
 
       - key: API_HASH
-        value: "your_api_hash_here" # <--- REPLACE with your actual API Hash
-        sync: false
+        value: "your_api_hash_here"  # <--- REPLACE with your actual API Hash
 
       - key: STRING_SESSION
-        value: "your_telethon_session_string_here" # <--- REPLACE with the session generated via sessionmaker.py
-        sync: false
+        value: "your_telethon_session_string_here"  # <--- REPLACE with the session generated via sessionmaker.py
 
       - key: DUMP_ID
-        value: -1001234567890 # <--- REPLACE with your target channel/chat ID (must be numeric)
-        sync: false
-
-      - key: PYTHON_VERSION
-        value: 3.9.13 # Matches the runtime.txt file in the repo
+        value: -1001234567890  # <--- REPLACE with your target channel/chat ID (must be numeric)
